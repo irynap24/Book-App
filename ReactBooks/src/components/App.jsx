@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Search from './Search';
 import BookList from './BookList';
 
@@ -14,6 +14,16 @@ const App = () => {
       console.error("Error fetching data:", error);
     }
   };
+
+  const fetchRandomBooks = async () => {
+    const randomQueries = ["fiction", "science", "fantasy", "mystery"];
+    const randomQuery = randomQueries[Math.floor(Math.random() * randomQueries.length)];
+    await fetchBooks(randomQuery);
+  };
+
+  useEffect(() => {
+    fetchRandomBooks();
+  }, []);
 
   return (
     <div>
