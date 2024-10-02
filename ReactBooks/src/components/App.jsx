@@ -27,7 +27,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Book Search App</h1>
+      <h1>Bookworm’s Choice</h1>
       <Search fetchBooks={fetchBooks} />
       <BookList books={books} />
     </div>
